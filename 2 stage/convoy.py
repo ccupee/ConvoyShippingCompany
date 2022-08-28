@@ -22,10 +22,7 @@ def correcting(file_name, w_file_name):
                         new_list.append(digits)
                         cells += 1
                 file_writer.writerow(new_list)
-    if cells != 1:
-        print(f'{cells} cells were corrected in {w_file_name}')
-    else:
-        print(f'{cells} cell was corrected in {w_file_name}')
+    print(f'{cells} cell{"s were" if cells != 1 else " was"} corrected in {w_file_name}')
 
 
 def main():
@@ -34,10 +31,8 @@ def main():
         my_df = pd.read_excel(str(file_name), sheet_name="Vehicles", dtype=str)
         file_name = file_name[:len(file_name) - 4] + 'csv'
         my_df.to_csv(str(file_name), index=False)
-        if my_df.shape[0] == 1:
-            print(f'{my_df.shape[0]} line was added to {file_name}')
-        else:
-            print(f'{my_df.shape[0]} lines were added to {file_name}')
+        rows = my_df.shape[0]
+        print(f'{rows} line{"s were" if rows != 1 else " was"} added to {file_name}')
     w_file_name = file_name[:len(file_name) - 4] + '[CHECKED].csv'
     correcting(file_name, w_file_name)
 
