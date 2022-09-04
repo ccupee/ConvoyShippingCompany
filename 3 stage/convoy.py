@@ -3,6 +3,16 @@ import csv
 import sqlite3
 
 
+def correct_input(file_name, w_file_name, db_file_name):
+    if '[CHECKED]' in file_name and '_chk' not in file_name:
+        w_file_name = file_name
+        db_file_name = file_name.replace("[CHECKED]", "chk").replace(".csv", ".s3db")
+    elif '[CHECKED]' in file_name and '_chk' in file_name:
+        w_file_name = file_name
+        db_file_name = file_name.replace("[CHECKED]", "").replace(".csv", ".s3db")
+    return w_file_name, db_file_name
+
+
 def correcting(file_name, w_file_name):
     count = 0
     cells = 0
@@ -26,18 +36,37 @@ def correcting(file_name, w_file_name):
     print(f'{cells} cell{"s were" if cells != 1 else " was"} corrected in {w_file_name}')
 
 
+def db_create(db_file_name):
+    conn = sqlite3.connect(db_file_name)
+    c_name = conn.cursor()
+    c_name.execute('drop table if exists convoy;')
+    return conn, c_name
+
+
+def db_execution(file_reader, c_name, count):
+    for line in file_reader:
+        if count == 0:
+            headers = tuple(line)
+            c_name.execute(f'create table if not exists convoy({headers[0]} int primary key,'
+                           f' {headers[1]} int not null, {headers[2]} int not null, {headers[3]} int not null);')
+            count = 1
+        else:
+            values = tuple(line)
+            c_name.execute(f'insert into convoy{headers} values{values};')
+            count += 1
+    return count
+
+
+def db_close(conn):
+    conn.commit()
+    conn.close()
+
+
 def main():
     file_name = input("Input file name\n")
     db_file_name, w_file_name = '', ''
     if '[CHECKED]' in file_name:
-        if '[CHECKED]' in file_name and '_chk' not in file_name:
-            w_file_name = file_name
-            db_file_name = file_name.replace("[CHECKED]", "chk")
-            db_file_name = db_file_name.replace(".csv", ".s3db")
-        elif '[CHECKED]' in file_name and '_chk' in file_name:
-            w_file_name = file_name
-            db_file_name = file_name.replace("[CHECKED]", "")
-            db_file_name = db_file_name.replace(".csv", ".s3db")
+        w_file_name, db_file_name = correct_input(file_name, w_file_name, db_file_name)
     else:
         if file_name[-4:] == "xlsx":
             my_df = pd.read_excel(str(file_name), sheet_name="Vehicles", dtype=str)
@@ -48,23 +77,13 @@ def main():
         w_file_name = file_name[:len(file_name) - 4] + '[CHECKED].csv'
         correcting(file_name, w_file_name)
         db_file_name = file_name.replace(".csv", ".s3db")
-    conn = sqlite3.connect(db_file_name)
-    c_name = conn.cursor()
-    c_name.execute('drop table if exists convoy;')
+    conn, c_name = db_create(db_file_name)
     with open(w_file_name, 'r') as w_file:
         count = 0
         file_reader = csv.reader(w_file, delimiter=',', lineterminator='\n')
-        for line in file_reader:
-            if count == 0:
-                headers = tuple(line)
-                c_name.execute(f'create table if not exists convoy({headers[0]} int primary key, {headers[1]} int not null, {headers[2]} int not null, {headers[3]} int not null);')
-                count = 1
-            else:
-                values = tuple(line)
-                c_name.execute(f'insert into convoy{headers} values{values};')
-                count += 1
-    conn.commit()
+        count = db_execution(file_reader, c_name, count)
     print(f'{count - 1} record{"s were" if count != 2 else " was"} inserted into {db_file_name}')
+    db_close(conn)
 
 
 if __name__ == '__main__':
