@@ -5,7 +5,8 @@ In this project artificial intelligence can make use of simple statistics to mak
 
 <h2>Objectives</h2>
 
-<div style=”margin-left:20px;”>1. Prompt the user to give a name for the input file (complete with the .xlsx, .csv, [CHECKED].csv or .s3db extension). For the prompt message, use Input file name followed by a newline.</div>
+<div style=”margin-left:20px;”>1. Prompt the user to give a name for the input file (complete with the .xlsx, .csv, [CHECKED].csv or .s3db extension). For the prompt message, use Input file name followed by a newline.</div>  
+
 
 
 <div style=”margin-left:20px;”>2. If your file is .xlsx or .csv, or it ends with %...%[CHECKED].csv, perform:</div>
