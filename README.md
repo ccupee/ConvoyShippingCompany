@@ -1,7 +1,5 @@
 # ConvoyShippingCompany
-# Dominoes
-Classic dominoes game against a computer.
-In this project artificial intelligence can make use of simple statistics to make educated decisions. 
+The final version: final stage/convoy.py
 
 <h2>Objectives</h2>
 
