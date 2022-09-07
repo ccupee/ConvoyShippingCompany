@@ -39,12 +39,15 @@ In this project artificial intelligence can make use of simple statistics to mak
                                                0 vehicles were saved into %file_name%.xml</div>
 
 <h4>Examples</h4>
+
 ![12](https://user-images.githubusercontent.com/93375843/188939540-560ead20-7fcd-4f3e-94b5-6615abf897ca.jpg)
 
 <em>XLSX file data_final_xlsx.xlsx</em>
+
 ![13](https://user-images.githubusercontent.com/93375843/188939566-0c00be29-3685-483f-898f-e90dd8767afa.jpg)
 
 <em>CSV file data_final_xlsx[CHECKED].csv</em>
+
 ![14](https://user-images.githubusercontent.com/93375843/188939586-421dbaf0-72a7-43c7-9f91-7c612351c021.jpg)
 
 ![11](https://user-images.githubusercontent.com/93375843/188939612-86971aa6-65f1-4b61-8554-7dded9613aa3.jpg)
