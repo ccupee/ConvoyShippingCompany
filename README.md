@@ -4,7 +4,7 @@ Classic dominoes game against a computer.
 In this project artificial intelligence can make use of simple statistics to make educated decisions. 
 
 <h2>Objectives</h2>
-1. Prompt the user to give a name for the input file (complete with the .xlsx, .csv, [CHECKED].csv or .s3db extension). For the prompt message, use Input file name followed by a newline.
+<o1> Prompt the user to give a name for the input file (complete with the .xlsx, .csv, [CHECKED].csv or .s3db extension). For the prompt message, use Input file name followed by a newline.</o1>
 2. If your file is .xlsx or .csv, or it ends with %...%[CHECKED].csv, perform:
     a.If your file is .xlsx, convert it to .csv.
     b.If your file is .csv correct the data right in the file.
