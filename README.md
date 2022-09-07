@@ -40,6 +40,7 @@ In this project artificial intelligence can make use of simple statistics to mak
 
 <h4>Examples</h4>
 <em>Scoring function</em>
-![1](https://user-images.githubusercontent.com/93375843/188937346-f99028e0-2262-47d7-b049-584b13bb9e75.png)
+![11](https://user-images.githubusercontent.com/93375843/188937517-6ca2150f-0151-48fa-a9ba-0c280305f7cb.jpg)
+
 
 
