@@ -39,6 +39,10 @@ In this project artificial intelligence can make use of simple statistics to mak
                                                0 vehicles were saved into %file_name%.xml</div>
 
 <h4>Examples</h4>
+
+
+![12](https://user-images.githubusercontent.com/93375843/188937873-cf09cac7-650d-4e71-a557-f3cb321b6b2c.jpg)
+
 <em>Scoring function</em>
 
 ![11](https://user-images.githubusercontent.com/93375843/188937637-2f17c58a-4d21-452d-9304-7e62483e9c61.jpg)
