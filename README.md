@@ -7,6 +7,7 @@ In this project artificial intelligence can make use of simple statistics to mak
 
 <div style=”margin-left:20px;”>1. Prompt the user to give a name for the input file (complete with the .xlsx, .csv, [CHECKED].csv or .s3db extension). For the prompt message, use Input file name followed by a newline.</div>
 
+
 <div style=”margin-left:20px;”>2. If your file is .xlsx or .csv, or it ends with %...%[CHECKED].csv, perform:</div>
 
     a.If your file is .xlsx, convert it to .csv.
@@ -16,8 +17,10 @@ In this project artificial intelligence can make use of simple statistics to mak
     e.Write the corrected data to a CSV file, add the [CHECKED] suffix to your file. For example: %file_name%[CHECKED].csv.
     f.Your program should output the following message for the converted CSV file: X cells were corrected or 1 cell was corrected, where X is the number of corrected       cells. Include the output file name.
     For example: 4 cells were corrected in %file_name%[CHECKED].csv.
-      
+
+
 <div style=”margin-left:20px;”>3. If the file ends with %...%[CHECKED].csv, create an SQLite3 database with the CSV file name, change its extension to .s3db. Remove the [CHECKED] suffix. For example, %file_name%[CHECKED].csv should be changed to %file_name%.s3db.</div>
+
 
 <div style=”margin-left:20px;”>4. Use "convoy" as the name for your database table and headers from the CSV file as the names of the table columns.</div>
 
