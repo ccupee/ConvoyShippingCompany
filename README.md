@@ -50,7 +50,22 @@ In this project artificial intelligence can make use of simple statistics to mak
 
 ![14](https://user-images.githubusercontent.com/93375843/188939586-421dbaf0-72a7-43c7-9f91-7c612351c021.jpg)
 
+<em>Scoring function</em>
+
 ![11](https://user-images.githubusercontent.com/93375843/188939612-86971aa6-65f1-4b61-8554-7dded9613aa3.jpg)
+
+<em>S3BD file data_final_xlsx.s3bd</em>
+
+![15](https://user-images.githubusercontent.com/93375843/188940638-db228404-b897-4784-a4c9-06bd49d2853a.jpg)
+
+<em>JSON file data_final_xlsx.json</em>
+
+![15](https://user-images.githubusercontent.com/93375843/188941300-132999dc-22d8-420f-b4d8-58ab9fca19d6.jpg)
+
+<em>XML file data_final_xlsx.xml</em>
+
+![16](https://user-images.githubusercontent.com/93375843/188941392-e4ac4dce-a7ff-4649-95f8-22ffcd351cd8.jpg)
+
 
 
 
